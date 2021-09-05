@@ -5,6 +5,34 @@ metadata:
   name: $STUDENT
 ---
 apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    acend.ch/purpose: webshell
+  name: acend-webshell
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  verbs:
+  - get
+  - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: ${STUDENT}-webshell
+subjects:
+- kind: User
+  name: system:serviceaccount:${STUDENT}-webshell:default
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: acend-webshell
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding 
 metadata:
   name: $STUDENT-rb
