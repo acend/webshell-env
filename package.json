@@ -33,7 +33,10 @@
     "terraform": "https://open-vsx.org/api/4ops/terraform/0.2.1/file/4ops.terraform-0.2.1.vsix",
     "yaml.lint": "https://open-vsx.org/api/phil9909/ytt-lint/0.3.1/file/phil9909.ytt-lint-0.3.1.vsix",
     "md.lint": "https://open-vsx.org/api/DavidAnson/vscode-markdownlint/0.45.0/file/DavidAnson.vscode-markdownlint-0.45.0.vsix",
-    "browser": "https://open-vsx.org/api/ms-vscode/live-server/0.2.12/file/ms-vscode.live-server-0.2.12.vsix"
+    "database": "https://open-vsx.org/api/cweijan/vscode-mysql-client2/4.3.0/file/cweijan.vscode-mysql-client2-4.3.0.vsix",
+    "kubernetes": "https://open-vsx.org/api/ms-kubernetes-tools/vscode-kubernetes-tools/1.3.6/file/ms-kubernetes-tools.vscode-kubernetes-tools-1.3.6.vsix",
+    "design": "https://open-vsx.org/api/PKief/material-icon-theme/4.12.1/file/PKief.material-icon-theme-4.12.1.vsix",
+    "browser": "https://open-vsx.org/api/antfu/browse-lite/0.2.16/file/antfu.browse-lite-0.2.16.vsix"
   },
   "theiaPluginsExcludeIds": [
     "vscode.extension-editing",
