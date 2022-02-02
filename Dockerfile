@@ -97,4 +97,4 @@ ENV USE_LOCAL_GIT true
 
 USER theia
 COPY bashrc /home/theia/.bashrc
-ENTRYPOINT [ "node", "/home/theia/src-gen/backend/main.js", "/home/project", "--hostname=0.0.0.0" ]
+ENTRYPOINT [ "node", "/home/theia/src-gen/backend/main.js", "/home/project", "--hostname=0.0.0.0", "--host=0.0.0.0", "--disable-host-check" ]
