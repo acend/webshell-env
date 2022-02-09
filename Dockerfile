@@ -1,4 +1,4 @@
-FROM node:16-alpine3.15
+FROM node:17-alpine3.15
 
 RUN apk add --no-cache make pkgconfig gcc g++ python3 libx11-dev libxkbfile-dev libsecret-dev
 
@@ -17,7 +17,7 @@ RUN yarn --pure-lockfile --ignore-engines && \
     yarn autoclean --force && \
     yarn cache clean
 
-FROM node:16-alpine3.15
+FROM node:17-alpine3.15
 
 ARG ARGOCD_VERSION=2.2.5
 ARG AZURECLI_VERSION=2.32.0
