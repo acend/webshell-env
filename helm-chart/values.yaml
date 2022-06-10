@@ -17,6 +17,15 @@ rbac:
 reset:
   enabled: true
   schedule: 0 */1 * * *
+  
+theia:
+  resources: 
+    limits:
+      cpu: 500m
+      memory: 1Gi
+    requests:
+      cpu: 50m
+      memory: 200Mi
 
 ingress:
   enabled: true
