@@ -21,7 +21,7 @@ RUN yarn --production --ignore-engines && \
 FROM node:18-alpine3.16
 
 # renovate: datasource=github-tags depName=argoproj/argo-cd
-ARG ARGOCD_VERSION=v2.4.12
+ARG ARGOCD_VERSION=v2.4.14
 # renovate: datasource=github-tags depName=Azure/azure-cli
 ARG AZURECLI_VERSION=2.40.0
 # renovate: datasource=github-tags depName=docker/compose
