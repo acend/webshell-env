@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   webshell:
   - apiVersion: v2
+    appVersion: 0.2.16
+    created: "2022-10-06T08:28:52.357271674Z"
+    description: A Helm chart to deploy a webshell environment
+    digest: c0a55880acd924a53b69e367e9d89334680200043369d30c360f293a52e60849
+    name: webshell
+    type: application
+    urls:
+    - https://github.com/acend/webshell-env/releases/download/webshell-0.2.16/webshell-0.2.16.tgz
+    version: 0.2.16
+  - apiVersion: v2
     appVersion: 0.2.15
     created: "2022-10-05T20:16:37.750875274Z"
     description: A Helm chart to deploy a webshell environment
@@ -371,4 +381,4 @@ entries:
     urls:
     - https://acend.github.io/webshell-env/webshell-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-05T20:16:37.751283797Z"
+generated: "2022-10-06T08:28:52.357845023Z"
