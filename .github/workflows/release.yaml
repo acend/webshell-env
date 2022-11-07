@@ -97,7 +97,7 @@ jobs:
           NAMESPACE: 'acend-webshell'
           PASSWORD: '${{ secrets.WEBSHELL_TEST_PASSWORD }}'
         run: |
-          helm upgrade $HELM_RELEASE webshell --install --wait --kubeconfig $HOME/.kube/config  --namespace=$NAMESPACE  --repo=https://acend.github.io/webshell-env/  --set password=$PASSWORD --values=helm-chart/values.yaml --atomic
+          helm upgrade $HELM_RELEASE webshell --install --wait --kubeconfig $HOME/.kube/config  --namespace=$NAMESPACE  --repo=https://acend.github.io/webshell-env/ --set password=$PASSWORD --values=deploy/charts/webshell/values-demo.yaml --atomic
       - 
         name: Redeploy Webshell
         env:
