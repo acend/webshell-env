@@ -53,12 +53,13 @@ RUN addgroup theia && \
 RUN apk --no-cache update && \
     apk --no-cache -U upgrade -a && \
     apk add --no-cache git openssh-client-default bash libsecret chromium \
-                       zsh zsh-autosuggestions podman buildah nano \
+                       zsh zsh-autosuggestions podman buildah nano ca-certificates \
                        coreutils grep curl gettext vim tree git p7zip gcompat \
                        docker-cli mysql-client lynx bind-tools figlet jq libffi \
                        bash-completion docker-bash-completion git-bash-completion \
                        py3-pip py3-yaml py3-pynacl py3-bcrypt py3-cryptography \
                        py3-wheel py3-cffi py3-openssl py3-psutil && \
+    chown -R theia:theia /usr/local/share/ca-certificates && \
     # azure
     pip3 install azure-cli==${AZURECLI_VERSION} --no-cache-dir && \
     # azure cli cleanup
