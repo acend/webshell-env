@@ -1,4 +1,4 @@
-FROM node:19-alpine3.16
+FROM node:19.8.1-alpine3.17 AS theia-webshell
 
 RUN apk add --no-cache make pkgconfig gcc g++ python3 libx11-dev libxkbfile-dev libsecret-dev
 
@@ -18,12 +18,12 @@ RUN yarn --production --ignore-engines && \
     yarn autoclean --force && \
     yarn cache clean
 
-FROM node:19-alpine3.16
+FROM node:19.8.1-alpine3.17
 
 # renovate: datasource=github-tags depName=argoproj/argo-cd
 ARG ARGOCD_VERSION=v2.6.7
 # renovate: datasource=github-tags depName=Azure/azure-cli
-ARG AZURECLI_VERSION=2.42.0
+ARG AZURECLI_VERSION=2.46.0
 # renovate: datasource=github-tags depName=docker/compose
 ARG DOCKER_COMPOSE=v2.13.0
 # renovate: datasource=github-tags depName=helm/helm
@@ -121,7 +121,7 @@ RUN apk --no-cache update && \
     tfenv use && \
     sed -i 's/#mount_program/mount_program/' /etc/containers/storage.conf
 
-COPY --from=0 --chown=theia:theia /home/theia /home/theia
+COPY --from=theia-webshell --chown=theia:theia /home/theia /home/theia
 
 ENV SHELL=/bin/bash \
     THEIA_DEFAULT_PLUGINS=local-dir:/home/theia/plugins \
