@@ -41,28 +41,28 @@ RUN yarn --pure-lockfile && \
 FROM node:20-bookworm-slim as production-stage
 
 # renovate: datasource=github-tags depName=argoproj/argo-cd
-ARG ARGOCD_VERSION=v2.13.0
+ARG ARGOCD_VERSION=v2.13.2
 # renovate: datasource=github-tags depName=Azure/azure-cli
 ARG AZURECLI_VERSION=2.51.0
 # renovate: datasource=github-tags depName=docker/compose
 ARG DOCKER_COMPOSE=v2.13.0
 # renovate: datasource=github-tags depName=helm/helm
-ARG HELM_VERSION=v3.16.2
+ARG HELM_VERSION=v3.16.3
 # renovate: datasource=github-tags depName=kubernetes/kubernetes
-ARG KUBECTL_VERSION=v1.31.2
+ARG KUBECTL_VERSION=v1.32.0
 # renovate: datasource=github-tags depName=hashicorp/terraform
-ARG TERRAFORM_VERSION=v1.9.8
+ARG TERRAFORM_VERSION=v1.10.2
 # renovate: datasource=github-releases depName=terraform-linters/tflint
 ARG TFLINT_VERSION=v0.54.0
 ARG KUSTOMIZE_VERSION=v5.3.0
 # renovate: datasource=github-tags depName=kubernetes/minikube
 ARG MINIKUBE_VERSION=v1.34.0
 # renovate: datasource=github-tags depName=aquasecurity/trivy
-ARG TRIVY_VERSION=v0.57.0
+ARG TRIVY_VERSION=v0.58.0
 # renovate: datasource=github-tags depName=tektoncd/cli
-ARG TEKTON_VERSION=v0.38.1
+ARG TEKTON_VERSION=v0.39.0
 # renovate: datasource=github-tags depName=kubevirt/kubevirt
-ARG VIRTCTL_VERSION=v1.3.1
+ARG VIRTCTL_VERSION=v1.4.0
 
 # Create theia user and directories
 # Application will be copied to /home/theia
