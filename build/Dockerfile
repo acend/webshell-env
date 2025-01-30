@@ -41,7 +41,7 @@ RUN yarn --pure-lockfile && \
 FROM node:20-bookworm-slim as production-stage
 
 # renovate: datasource=github-tags depName=argoproj/argo-cd
-ARG ARGOCD_VERSION=v2.13.3
+ARG ARGOCD_VERSION=v2.13.4
 # renovate: datasource=github-tags depName=Azure/azure-cli
 ARG AZURECLI_VERSION=2.51.0
 # renovate: datasource=github-tags depName=docker/compose
@@ -58,9 +58,9 @@ ARG KUSTOMIZE_VERSION=v5.3.0
 # renovate: datasource=github-tags depName=kubernetes/minikube
 ARG MINIKUBE_VERSION=v1.35.0
 # renovate: datasource=github-tags depName=aquasecurity/trivy
-ARG TRIVY_VERSION=v0.58.2
+ARG TRIVY_VERSION=v0.59.0
 # renovate: datasource=github-tags depName=tektoncd/cli
-ARG TEKTON_VERSION=v0.39.0
+ARG TEKTON_VERSION=v0.39.1
 # renovate: datasource=github-tags depName=kubevirt/kubevirt
 ARG VIRTCTL_VERSION=v1.4.0
 
