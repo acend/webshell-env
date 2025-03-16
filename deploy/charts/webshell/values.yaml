@@ -7,6 +7,10 @@ replicaCount: 1
 user: "user1"
 password: "changeme"
 
+auth:
+  # deploys a secret that can be used for basic auth
+  enabled: true 
+
 # Set to true when deploying on OpenShift
 openshift: false
 
