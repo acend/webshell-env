@@ -1,5 +1,5 @@
 # Builder stage
-FROM node:20-bookworm as build-stage
+FROM node:20-bookworm AS build-stage
 
 # install required tools to build the application
 RUN apt-get update && \ 
