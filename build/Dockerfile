@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y git jq libxkbfile-dev libsecret-1-dev
 
 # renovate: datasource=github-tags depName=eclipse-theia/theia-blueprint
-ARG THEIA_VERSION=1.57.100
+ARG THEIA_VERSION=v1.59.1
 
 WORKDIR /tmp
 RUN git clone --depth 1 --branch ${THEIA_VERSION} https://github.com/eclipse-theia/theia-blueprint.git
@@ -41,28 +41,28 @@ RUN yarn --pure-lockfile && \
 FROM node:20-bookworm-slim as production-stage
 
 # renovate: datasource=github-tags depName=argoproj/argo-cd
-ARG ARGOCD_VERSION=v2.13.3
+ARG ARGOCD_VERSION=v2.14.5
 # renovate: datasource=github-tags depName=Azure/azure-cli
 ARG AZURECLI_VERSION=2.51.0
 # renovate: datasource=github-tags depName=docker/compose
 ARG DOCKER_COMPOSE=v2.13.0
 # renovate: datasource=github-tags depName=helm/helm
-ARG HELM_VERSION=v3.17.0
+ARG HELM_VERSION=v3.17.2
 # renovate: datasource=github-tags depName=kubernetes/kubernetes
-ARG KUBECTL_VERSION=v1.32.1
+ARG KUBECTL_VERSION=v1.32.3
 # renovate: datasource=github-tags depName=hashicorp/terraform
-ARG TERRAFORM_VERSION=v1.10.5
+ARG TERRAFORM_VERSION=v1.11.2
 # renovate: datasource=github-releases depName=terraform-linters/tflint
-ARG TFLINT_VERSION=v0.55.0
+ARG TFLINT_VERSION=v0.55.1
 ARG KUSTOMIZE_VERSION=v5.3.0
 # renovate: datasource=github-tags depName=kubernetes/minikube
 ARG MINIKUBE_VERSION=v1.35.0
 # renovate: datasource=github-tags depName=aquasecurity/trivy
-ARG TRIVY_VERSION=v0.58.2
+ARG TRIVY_VERSION=v0.60.0
 # renovate: datasource=github-tags depName=tektoncd/cli
-ARG TEKTON_VERSION=v0.39.0
+ARG TEKTON_VERSION=v0.40.0
 # renovate: datasource=github-tags depName=kubevirt/kubevirt
-ARG VIRTCTL_VERSION=v1.4.0
+ARG VIRTCTL_VERSION=v1.5.0
 
 # Create theia user and directories
 # Application will be copied to /home/theia
