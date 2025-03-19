@@ -19,7 +19,7 @@ theia:
 
 ingress:
   enabled: true
-  className: ""
+  className: "nginx"
   annotations: 
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/auth-type: "basic"
