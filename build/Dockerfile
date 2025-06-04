@@ -41,7 +41,7 @@ RUN yarn --pure-lockfile && \
 FROM node:22-bookworm-slim as production-stage
 
 # renovate: datasource=github-tags depName=argoproj/argo-cd
-ARG ARGOCD_VERSION=v2.14.13
+ARG ARGOCD_VERSION=v3.0.5
 # renovate: datasource=github-tags depName=Azure/azure-cli
 ARG AZURECLI_VERSION=2.51.0
 # renovate: datasource=github-tags depName=docker/compose
