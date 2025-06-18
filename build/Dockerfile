@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y git jq libxkbfile-dev libsecret-1-dev
 
 # renovate: datasource=github-tags depName=eclipse-theia/theia-blueprint
-ARG THEIA_VERSION=v1.61.0
+ARG THEIA_VERSION=v1.62.200
 
 WORKDIR /tmp
 RUN git clone --depth 1 --branch ${THEIA_VERSION} https://github.com/eclipse-theia/theia-blueprint.git
@@ -41,15 +41,15 @@ RUN yarn --pure-lockfile && \
 FROM node:22-bookworm-slim as production-stage
 
 # renovate: datasource=github-tags depName=argoproj/argo-cd
-ARG ARGOCD_VERSION=v3.0.6
+ARG ARGOCD_VERSION=v3.0.9
 # renovate: datasource=github-tags depName=Azure/azure-cli
 ARG AZURECLI_VERSION=2.51.0
 # renovate: datasource=github-tags depName=docker/compose
 ARG DOCKER_COMPOSE=v2.13.0
 # renovate: datasource=github-tags depName=helm/helm
-ARG HELM_VERSION=v3.18.2
+ARG HELM_VERSION=v3.18.3
 # renovate: datasource=github-tags depName=kubernetes/kubernetes
-ARG KUBECTL_VERSION=v1.33.1
+ARG KUBECTL_VERSION=v1.33.2
 # renovate: datasource=github-tags depName=hashicorp/terraform
 ARG TERRAFORM_VERSION=v1.12.2
 # renovate: datasource=github-releases depName=terraform-linters/tflint
