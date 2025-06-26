@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y git jq libxkbfile-dev libsecret-1-dev
 
 # renovate: datasource=github-tags depName=eclipse-theia/theia-blueprint
-ARG THEIA_VERSION=v1.61.0
+ARG THEIA_VERSION=v1.62.2
 
 WORKDIR /tmp
 RUN git clone --depth 1 --branch ${THEIA_VERSION} https://github.com/eclipse-theia/theia-blueprint.git
@@ -54,7 +54,7 @@ ARG KUBECTL_VERSION=v1.33.1
 ARG TERRAFORM_VERSION=v1.12.2
 # renovate: datasource=github-releases depName=terraform-linters/tflint
 ARG TFLINT_VERSION=v0.58.0
-ARG KUSTOMIZE_VERSION=v5.3.0
+ARG KUSTOMIZE_VERSION=v5.6.0
 # renovate: datasource=github-tags depName=kubernetes/minikube
 ARG MINIKUBE_VERSION=v1.36.0
 # renovate: datasource=github-tags depName=aquasecurity/trivy
