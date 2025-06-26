@@ -9,7 +9,7 @@ RUN apt-get update && \
 ARG THEIA_VERSION=v1.62.2
 
 WORKDIR /tmp
-RUN git clone --depth 1 --branch ${THEIA_VERSION} https://github.com/eclipse-theia/theia-blueprint.git
+RUN git clone --depth 1 --branch ${THEIA_VERSION} https://github.com/eclipse-theia/theia.git
 
 WORKDIR /home/theia
 RUN cp -r /tmp/theia-blueprint/* .
