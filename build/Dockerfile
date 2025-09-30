@@ -41,7 +41,7 @@ RUN yarn --pure-lockfile && \
 FROM node:22-bookworm-slim as production-stage
 
 # renovate: datasource=github-tags depName=argoproj/argo-cd
-ARG ARGOCD_VERSION=v3.1.7
+ARG ARGOCD_VERSION=v3.1.8
 # renovate: datasource=github-tags depName=Azure/azure-cli
 ARG AZURECLI_VERSION=2.51.0
 # renovate: datasource=github-tags depName=docker/compose
@@ -58,11 +58,11 @@ ARG KUSTOMIZE_VERSION=v5.3.0
 # renovate: datasource=github-tags depName=kubernetes/minikube
 ARG MINIKUBE_VERSION=v1.37.0
 # renovate: datasource=github-tags depName=aquasecurity/trivy
-ARG TRIVY_VERSION=v0.66.0
+ARG TRIVY_VERSION=v0.67.0
 # renovate: datasource=github-tags depName=tektoncd/cli
 ARG TEKTON_VERSION=v0.42.0
 # renovate: datasource=github-tags depName=kubevirt/kubevirt
-ARG VIRTCTL_VERSION=v1.6.1
+ARG VIRTCTL_VERSION=v1.6.2
 
 # Create theia user and directories
 # Application will be copied to /home/theia
