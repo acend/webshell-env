@@ -47,7 +47,7 @@ ARG AZURECLI_VERSION=2.51.0
 # renovate: datasource=github-tags depName=docker/compose
 ARG DOCKER_COMPOSE=v2.13.0
 # renovate: datasource=github-tags depName=helm/helm
-ARG HELM_VERSION=v3.19.0
+ARG HELM_VERSION=v4.0.5
 # renovate: datasource=github-tags depName=kubernetes/kubernetes
 ARG KUBECTL_VERSION=v1.34.1
 # renovate: datasource=github-tags depName=hashicorp/terraform
