@@ -58,7 +58,7 @@ ARG KUSTOMIZE_VERSION=v5.3.0
 # renovate: datasource=github-tags depName=kubernetes/minikube
 ARG MINIKUBE_VERSION=v1.38.0
 # renovate: datasource=github-tags depName=aquasecurity/trivy
-ARG TRIVY_VERSION=v0.68.2
+ARG TRIVY_VERSION=v0.69.0
 # renovate: datasource=github-tags depName=tektoncd/cli
 ARG TEKTON_VERSION=v0.43.0
 # renovate: datasource=github-tags depName=kubevirt/kubevirt
