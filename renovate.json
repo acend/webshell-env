@@ -8,7 +8,7 @@
       "groupName": "{{manager}}"
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
       "customType": "regex",
       "description": "Update ARG versions of services in Dockerfiles",
