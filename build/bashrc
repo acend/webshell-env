@@ -21,7 +21,11 @@ export PATH="$KREW_ROOT/bin:$PATH"
 
 if [ ! -f "$HOME/.kube/config" ]; then
   kubectl config set-cluster local --server="https://kubernetes.default" --certificate-authority "/run/secrets/kubernetes.io/serviceaccount/ca.crt"
-  kubectl config set-credentials local --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)"
+  if [ "${KUBECONFIG_USE_TOKENFILE:-false}" = "true" ]; then
+    kubectl config set-credentials local --token-file=/run/secrets/kubernetes.io/serviceaccount/token
+  else
+    kubectl config set-credentials local --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)"
+  fi
   kubectl config set-context local --cluster "local" --user "local"
   kubectl config set-context local --namespace="${KUBECONFIG_NAMESPACE:-$USER}"
   kubectl config use-context local
