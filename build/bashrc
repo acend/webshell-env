@@ -21,16 +21,12 @@ export PATH="$KREW_ROOT/bin:$PATH"
 
 if [ ! -f "$HOME/.kube/config" ]; then
   kubectl config set-cluster local --server="https://kubernetes.default" --certificate-authority "/run/secrets/kubernetes.io/serviceaccount/ca.crt"
-  if [ "${KUBECONFIG_USE_TOKENFILE:-false}" = "true" ]; then
-    kubectl config set-credentials local --token-file=/run/secrets/kubernetes.io/serviceaccount/token
-  else
-    kubectl config set-credentials local --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)"
-  fi
+  kubectl config set-credentials local --token="$(cat /run/secrets/kubernetes.io/serviceaccount/token)"
   kubectl config set-context local --cluster "local" --user "local"
   kubectl config set-context local --namespace="${KUBECONFIG_NAMESPACE:-$USER}"
   kubectl config use-context local
 
-  if [ -n "$CLUSTER_K8S_API_HOST" ]; then
+  if [ -n "$CLUSTER_K8S_API_HOST" ] || [ -n "$KUBECONFIG_SERVER" ]; then
     /home/theia/create_kubeconfig.sh
   fi
 fi

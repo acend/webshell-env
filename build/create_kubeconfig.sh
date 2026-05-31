@@ -9,6 +9,7 @@ KUBECONFIG_NAMESPACE="${KUBECONFIG_NAMESPACE:-$SA_NAMESPACE}"
 KUBECONFIG_CLUSTER_NAME="${KUBECONFIG_CLUSTER_NAME:-acend-training-cluster}"
 KUBECONFIG_CONTEXT="${KUBECONFIG_CONTEXT:-acend-training}"
 KUBECONFIG_USERNAME="${KUBECONFIG_USERNAME:-acend-user}"
+KUBECONFIG_SERVER="${KUBECONFIG_SERVER:-https://${CLUSTER_K8S_API_HOST}:6443}"
 
 mkdir -p "$(dirname "$KUBECONFIG_PATH")"
 
@@ -17,7 +18,7 @@ apiVersion: v1
 clusters:
 - cluster:
     certificate-authority-data: ${CA}
-    server: https://${CLUSTER_K8S_API_HOST}:6443
+    server: ${KUBECONFIG_SERVER}
   name: ${KUBECONFIG_CLUSTER_NAME}
 contexts:
 - context:
