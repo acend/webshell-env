@@ -16,7 +16,8 @@ alias k=kubectl
 complete -o default -F __start_kubectl k
 complete -C /usr/bin/terraform terraform
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export KREW_ROOT=/home/theia/.krew
+export PATH="$KREW_ROOT/bin:$PATH"
 
 if [ ! -f "~/.kube/config" ]; then
   kubectl config set-cluster local --server="https://kubernetes.default" --certificate-authority "/run/secrets/kubernetes.io/serviceaccount/ca.crt"
