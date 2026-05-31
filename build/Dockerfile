@@ -150,6 +150,8 @@ USER theia
 COPY --chown=theia bashrc /home/theia/.bashrc
 COPY --chown=theia profile /home/theia/.profile
 COPY --chown=theia create_kubeconfig.sh /home/theia/create_kubeconfig.sh
+COPY --chown=theia entrypoint.sh /home/theia/entrypoint.sh
+RUN chmod +x /home/theia/entrypoint.sh
 
 RUN cd /home/theia && \
     curl -fsSLO https://github.com/kubernetes-sigs/krew/releases/latest/download/krew-linux_amd64.tar.gz && \
@@ -161,8 +163,5 @@ RUN cd /home/theia && \
 
 WORKDIR /home/theia/applications/browser
 
-# Launch the backend application via node
-ENTRYPOINT [ "node", "/home/theia/applications/browser/lib/backend/main.js" ]
-
-# Arguments passed to the application
+ENTRYPOINT [ "/home/theia/entrypoint.sh" ]
 CMD [ "/home/project", "--hostname=0.0.0.0" ]
