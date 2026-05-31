@@ -31,5 +31,9 @@ preferences: {}
 users:
 - name: ${KUBECONFIG_USERNAME}
   user:
-    token: ${TOKEN}
+$(if [ "${KUBECONFIG_USE_TOKENFILE:-false}" = "true" ]; then
+    echo "    tokenFile: /run/secrets/kubernetes.io/serviceaccount/token"
+  else
+    echo "    token: ${TOKEN}"
+  fi)
 EOF
