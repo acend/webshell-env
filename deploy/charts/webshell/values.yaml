@@ -9,7 +9,7 @@ password: "changeme"
 
 auth:
   # deploys a secret that can be used for basic auth
-  enabled: true 
+  enabled: true
 
 # Set to true when deploying on OpenShift
 openshift: false
@@ -55,7 +55,7 @@ dind:
   enabled: true
   image:
     repository: docker
-    tag: 29.2.0-dind
+    tag: 29.5.3-dind
   resources: {}
   persistence:
     enabled: false
