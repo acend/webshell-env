@@ -8,9 +8,14 @@ alias ls="ls --color"
 alias ll="ls -l"
 find /home/project -name .profile -exec source {} \; 2>/dev/null
 
-export DOCKER_HOST=tcp://localhost:2376
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=/home/project/.tls/client
+# Defaults to the TLS-secured dind sidecar on :2376. Deployments using a
+# different docker/podman endpoint (e.g. a plain unix socket) can set
+# WEBSHELL_DOCKER_HOST to override it.
+export DOCKER_HOST="${WEBSHELL_DOCKER_HOST:-tcp://localhost:2376}"
+if [ -z "$WEBSHELL_DOCKER_HOST" ]; then
+  export DOCKER_TLS_VERIFY=1
+  export DOCKER_CERT_PATH=/home/project/.tls/client
+fi
 
 alias k=kubectl
 complete -o default -F __start_kubectl k
